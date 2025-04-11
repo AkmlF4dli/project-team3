@@ -1,28 +1,20 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="d-flex justify-content-between align-items-center">
-            <h2 class="text-xl fw-bold text-primary">
-                🎉 Dashboard Workshop
-            </h2>
-            <a href="{{ route('events.create') }}" class="btn btn-primary shadow">
-                + Buat Event Baru
-            </a>
-        </div>
-    </x-slot>
-
+ 
     <div class="py-5 bg-light min-vh-100">
         <div class="container">
             <!-- Bootstrap Alert -->
-            <div class="alert alert-success shadow-sm" role="alert">
+            {{-- <div class="alert alert-success shadow-sm" role="alert">
                 ✅ Kamu berhasil login ke sistem!
-            </div>
+            </div> --}}
 
             <!-- Workshop Cards -->
             <div class="row g-4">
                 <!-- Card 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="https://source.unsplash.com/400x200/?workshop,education" class="card-img-top" alt="Workshop">
+                        <img src="https://images.unsplash.com/photo-1743126642334-ab003ce665da?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D:w" class="card-img-top" alt="Workshop">
                         <div class="card-body">
                             <h5 class="card-title text-primary">Public Speaking Workshop</h5>
                             <p class="card-text text-muted mb-1">📅 25 April 2025</p>
