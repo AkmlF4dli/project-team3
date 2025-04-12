@@ -22,10 +22,10 @@ Dengan desain yang minimalis dan mudah dinavigasi, pengguna dari segala usia dap
 
 # instalasi 
 --------------------------
-Linux (debian family): 
+Linux (debian family)
 $ apt install composer mysql php
 
-Windows (scoop):
+Windows (scoop)
 $ scoop bucket add main
 $ scoop install main/composer
 $ scoop install main/nodejs
