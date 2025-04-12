@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudah Terdaftar di Event Ini</title>
+  <title>Sudah Terdaftar Dua Kali</title>
   <style>
     * {
       box-sizing: border-box;
@@ -33,7 +33,7 @@
 
     .icon {
       font-size: 100px;
-      color: #4caf50;
+      color: #ff5722;
       animation: bounce 2s ease-in-out infinite;
     }
 
@@ -52,7 +52,7 @@
     .message {
       font-size: 20px;
       font-weight: bold;
-      color: #388e3c;
+      color: #e53935;
       margin-bottom: 20px;
     }
 
@@ -83,12 +83,12 @@
 </head>
 <body>
   <div class="container">
-    <!-- Ikon Pemberitahuan: Sudah Terdaftar -->
-    <div class="icon">✅</div>
-    <h1>Selamat! Kamu Sudah Terdaftar</h1>
-    <p>Kamu sudah berhasil terdaftar di event ini. Kami senang bisa bertemu denganmu di sana!</p>
-    <div class="message">🎉 Terima kasih telah bergabung!</div>
-    <a href="{{ route('joined') }}" class="btn">Lihat Event - Event yang kamu ikuti</a>
+    <!-- Ikon Peringatan: Sudah Terdaftar Dua Kali -->
+    <div class="icon">⚠️</div>
+    <h1>Oops! Kamu Sudah Terdaftar Dua Kali</h1>
+    <p>Kami mendeteksi bahwa kamu telah mendaftar lebih dari sekali untuk event ini. Jangan khawatir, kamu hanya perlu satu pendaftaran saja! 🎉</p>
+    <div class="message">✅ Tidak perlu mendaftar lagi, cukup menunggu informasi lebih lanjut.</div>
+    <a href="{{ route('dashboard') }}" class="btn">Kembali ke Beranda</a>
   </div>
 </body>
 </html>

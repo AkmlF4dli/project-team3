@@ -14,9 +14,10 @@ class UserController extends Controller
     }
 
     public function event($id, $title){
+	    $kuota = DB::select("SELECT * FROM eventsfollowing WHERE event_id = ? AND title = ?", [$id, $title]);
         $results = DB::select("SELECT * FROM events WHERE id = ? AND title = ?", [$id, $title]);
 
-        return view('event', ['event' => $results]);
+        return view('event', ['event' => $results, 'kuota' => count($kuota)]);
     } 
 
     public function joinevent(Request $request){
@@ -29,9 +30,17 @@ class UserController extends Controller
         $place = $request->query('place');
         $image = $request->query('image');
         $author = $request->query('author');
+        
+        $checkintegrity1 = DB::select("SELECT * FROM users WHERE name = ?", [$name]);
+        $checkintegrity2 = DB::select("SELECT * FROM events WHERE id = ? AND title = ? AND description = ? AND dated = ? and place = ? AND imaging = ? AND author = ? AND kuota = ?", [$id, $title, $desc, $date, $place, $image, $author, $kuota]);
+        $checkavalableuser = DB::select("SELECT * FROM eventsfollowing WHERE named = ? AND event_id = ? AND title = ? AND description = ? AND dated = ? AND place = ? AND imaging = ? AND author = ? AND kuota = ?", [$name, $id, $title, $desc, $date, $place, $image, $author, $kuota]);
+        
+        if(count($checkavalableuser) == 1){
+            return redirect()->to('/event/already/join');
+        }
 
+        if (count($checkintegrity1) > 0 && count($checkintegrity2) > 0){
         $checkkuota = DB::select("SELECT * FROM eventsfollowing WHERE event_id = ?", [$id]);
-
         // return redirect()->to(count($checkkuota));
 
         if (count($checkkuota) < $kuota){
@@ -42,15 +51,24 @@ class UserController extends Controller
          }
         }
         else{
-            return redirect()->to('events/limited');
+            return redirect()->to('event/limited');
         }
+    }
+    else{
+        return redirect()->to("/event/not/found");
+    }
+
 
     }
 
     public function eventsfollowing()
     {
+        return view('eventsfollowing');
+    }
+
+    public function joinedevents(){
         $results = DB::select("SELECT * FROM eventsfollowing WHERE named = ?", [Auth::user()->name]);
 
-        return view('eventsfollowing', ['event' => $results]);
+        return view('joinedevents', ['events' => $results]);
     }
 }

@@ -30,7 +30,7 @@
                     + Buat Event Baru
                 </a>
                 @else
-                <a href="" class="btn btn-primary shadow">
+                <a href="{{ route('joined') }}" class="btn btn-primary shadow">
                     Event you following
                 </a>
                 @endif
@@ -115,7 +115,7 @@
                 + Buat Event Baru
             </a>
             @else
-            <a href="" class="btn btn-primary shadow">
+            <a href="{{ route('joined') }}" class="btn btn-primary shadow">
                 Event you following
             </a>
             @endif

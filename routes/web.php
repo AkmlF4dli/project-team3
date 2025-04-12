@@ -22,6 +22,20 @@ Route::get('/dashboard/event/{id}/{title}', [UserController::class, 'event'])->m
 Route::get('/join', [UserController::class, 'joinevent'])->middleware(['auth', 'verified']);
 Route::get('/events/following', [UserController::class, 'eventsfollowing'])->middleware(['auth', 'verified'])->name('eventsfollowing');
 
+Route::get('/events/joined', [UserController::class, 'joinedevents'])->name('joined');
+
+Route::get('/event/not/found', function(){
+    return view('status/not_found');
+});
+
+Route::get('/event/already/join', function() {
+    return view('status/already');
+});
+
+Route::get('/event/limited', function(){
+    return view('status/limited_kuota');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

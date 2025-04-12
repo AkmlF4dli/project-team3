@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudah Terdaftar di Event Ini</title>
+  <title>Event Dengan Kuota Terbatas</title>
   <style>
     * {
       box-sizing: border-box;
@@ -33,7 +33,7 @@
 
     .icon {
       font-size: 100px;
-      color: #4caf50;
+      color: #ff9800;
       animation: bounce 2s ease-in-out infinite;
     }
 
@@ -49,10 +49,10 @@
       margin-bottom: 30px;
     }
 
-    .message {
+    .warning {
       font-size: 20px;
       font-weight: bold;
-      color: #388e3c;
+      color: #e53935;
       margin-bottom: 20px;
     }
 
@@ -60,10 +60,11 @@
       padding: 12px 24px;
       background-color: #4a90e2;
       color: white;
-      text-decoration: none;
+      border: none;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .btn:hover {
@@ -83,12 +84,11 @@
 </head>
 <body>
   <div class="container">
-    <!-- Ikon Pemberitahuan: Sudah Terdaftar -->
-    <div class="icon">✅</div>
-    <h1>Selamat! Kamu Sudah Terdaftar</h1>
-    <p>Kamu sudah berhasil terdaftar di event ini. Kami senang bisa bertemu denganmu di sana!</p>
-    <div class="message">🎉 Terima kasih telah bergabung!</div>
-    <a href="{{ route('joined') }}" class="btn">Lihat Event - Event yang kamu ikuti</a>
+    <div class="icon">⚠️</div>
+    <h1>Kuota Event Terbatas!</h1>
+    <p>Hurry up! Kuota untuk event ini sudah hampir penuh </p>
+    <div class="warning">⚡️ Lain kali segera daftar sebelum kehabisan!</div>
+    <a href="{{ route('dashboard') }}" class="btn">Cari event lain</a>
   </div>
 </body>
 </html>

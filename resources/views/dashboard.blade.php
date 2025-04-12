@@ -32,7 +32,7 @@
     <!-- Footer -->
     <div class="footer bg-dark text-white py-3 mt-5">
         <div class="container text-center">
-            <p>© 2025 Your Company Name. All Rights Reserved.</p>
+            <p>© 2025 Project Latihan. All Rights Reserved.</p>
             <p><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
         </div>
     </div>
