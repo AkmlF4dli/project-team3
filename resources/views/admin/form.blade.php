@@ -64,7 +64,7 @@
 
         <div class="mb-3">
             <label for="judul" class="form-label">Kuota</label>
-            <input type="text" class="form-control" id="judul" name="kuota" required>
+            <input type="number" class="form-control" id="judul" name="kuota" required>
         </div>
 
         <div class="mb-3">

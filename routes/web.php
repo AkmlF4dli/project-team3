@@ -22,7 +22,7 @@ Route::get('/dashboard/event/{id}/{title}', [UserController::class, 'event'])->m
 Route::get('/join', [UserController::class, 'joinevent'])->middleware(['auth', 'verified']);
 Route::get('/events/following', [UserController::class, 'eventsfollowing'])->middleware(['auth', 'verified'])->name('eventsfollowing');
 
-Route::get('/events/joined', [UserController::class, 'joinedevents'])->name('joined');
+Route::get('/events/joined', [UserController::class, 'joinedevents'])->middleware('auth', 'verified')->name('joined');
 
 Route::get('/event/not/found', function(){
     return view('status/not_found');
