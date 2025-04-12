@@ -16,7 +16,11 @@ Route::get('/add/events', [AdminController::class, 'addeventform'])->middleware(
 Route::post('/add/events', [AdminController::class,'funeventform'])->middleware(['auth', 'verified'])->name('funform');
 
 
-Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'events'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard/event/{id}/{title}', [UserController::class, 'event'])->middleware(['auth', 'verified'])->name('event');
+
+Route::get('/join', [UserController::class, 'joinevent'])->middleware(['auth', 'verified']);
+Route::get('/events/following', [UserController::class, 'eventsfollowing'])->middleware(['auth', 'verified'])->name('eventsfollowing');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

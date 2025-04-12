@@ -3,16 +3,27 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 
 return new class extends Migration
 {
     /**
      * Run the migrations.
      */
+
+    public function boot()
+    {
+	   config(['app.locale' => 'id']);
+	   Carbon::setLocale('id');
+    }
+
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('eventsfollowing', function (Blueprint $table) {
             $table->id();
+            $table->string('named');
+            $table->date('created_at')->default(Carbon::today()->toDateString());
+            $table->integer('event_id');
             $table->string('title');
             $table->longText('description');
             $table->date('dated');
@@ -29,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('eventsfollowing');
     }
 };
