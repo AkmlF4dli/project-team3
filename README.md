@@ -29,8 +29,8 @@ Windows (scoop):
 scoop bucket add main
 scoop install main/composer
 scoop install main/nodejs
---------------------------
 
+--------------------------
 git clone https://github.com/AkmlF4dli/project-team3
 cd project-team3
 composer update 
