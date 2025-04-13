@@ -23,23 +23,23 @@ Dengan desain yang minimalis dan mudah dinavigasi, pengguna dari segala usia dap
 # instalasi 
 --------------------------
 Linux (debian family)
-$ apt install composer mysql php
+``` apt install composer mysql php```
 
 Windows (scoop)
-$ scoop bucket add main
-$ scoop install main/composer
-$ scoop install main/nodejs
+```scoop bucket add main```
+```scoop install main/composer```
+```scoop install main/nodejs```
 
 --------------------------
-$ git clone https://github.com/AkmlF4dli/project-team3
-$ cd project-team3
-$ composer update 
-$ php artisan key:generate
-$ // configurasi file .env.sample menjadi file .env
-$ php artisan migrate
-$ php artisan db:seed --class=AdminSeeder
-$ php artisan serve
-$ npm run dev
+```git clone https://github.com/AkmlF4dli/project-team3```
+```cd project-team3```
+```composer update``` 
+```php artisan key:generate```
+```// configurasi file .env.sample menjadi file .env```
+```php artisan migrate```
+```php artisan db:seed --class=AdminSeeder```
+```php artisan serve```
+```npm run dev```
 
 === project kelompok 3 ===
 - Muhammad Akmal Fadli
