@@ -39,8 +39,8 @@ Windows (scoop)
 ```php artisan migrate```
 ```php artisan db:seed --class=AdminSeeder```
 ```
-php artisan serve`
-``
+php artisan serve
+```
 ```
 npm run dev
 ```
