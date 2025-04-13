@@ -38,8 +38,12 @@ Windows (scoop)
 ```// configurasi file .env.sample menjadi file .env```
 ```php artisan migrate```
 ```php artisan db:seed --class=AdminSeeder```
-```php artisan serve```
-```npm run dev```
+```
+php artisan serve`
+``
+```
+npm run dev
+```
 
 === project kelompok 3 ===
 - Muhammad Akmal Fadli
